@@ -80,3 +80,5 @@ kubectl rollout undo deployment reviewfilmes
 ```bash
 aws eks --region <REGION> update-kubeconfig --name <CLUSTER_NAME>
 ```
+
+## Criação do Workflow YAML para GitHub Actions
