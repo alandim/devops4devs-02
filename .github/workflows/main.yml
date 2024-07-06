@@ -17,6 +17,16 @@ jobs:
         with:
           username: ${{ secrets.DOCKERHUB_USERNAME}}
           password: ${{ secrets.DOCKERHUB_TOKEN}}
+
+      - name: Build and push
+        uses: docker/build-push-action@v6.2.0
+        with:
+          context: ./src
+          push: true
+          file: ./src/Review-Filmes.Web/Dockerfile
+          tags: |
+            andrelandim471/review-filmes:v${{github.run_number}}
+            andrelandim471/review-filmes:latest
   
   CD:
     runs-on: ubuntu-latest
